@@ -1,9 +1,11 @@
 import {
+  Col,
   Divider,
   Flex,
   Form,
   Input,
   InputNumber,
+  Row,
   Switch,
   Typography,
 } from "antd";
@@ -45,9 +47,27 @@ export default function SettingForm() {
         <Switch />
       </Form.Item>
 
-      <Form.Item name="vipLevel" label="Cấp VIP">
-        <InputNumber min={0} className="!w-1/4" />
-      </Form.Item>
+      <Row gutter={[20, 20]}>
+        <Col span={6}>
+          <Form.Item name="vipLevel" label="Cấp VIP">
+            <InputNumber
+              min={0}
+              className="!w-full"
+              placeholder="Nhập cấp VIP"
+            />
+          </Form.Item>
+        </Col>
+        <Col span={6}>
+          <Form.Item name="homePageLink" label="Link trang chủ">
+            <Input className="!w-full" placeholder="Nhập link trang chủ" />
+          </Form.Item>
+        </Col>
+        <Col span={6}>
+          <Form.Item name="promotionLink" label="Link khuyến mãi">
+            <Input className="!w-full" placeholder="Nhập link khuyến mãi" />
+          </Form.Item>
+        </Col>
+      </Row>
 
       <Form.Item name="blacklist" label="Danh sách đen">
         <Input.TextArea
